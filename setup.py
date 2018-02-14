@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',
-    description='A simple Django app to create a calender file.',
+    description='A simple Django app to create a calendar file.',
     long_description=README,
     url='https://github.com/cansarigol/django-calfile',
     author='cansargl',

@@ -1,8 +1,8 @@
 =====
-Calender File
+Calendar File
 =====
 
-CalFile is a simple Django app to create a calender file.
+CalFile is a simple Django app to create a calendar file.
 
 Detailed documentation is in the "docs" directory.
 
