@@ -16,7 +16,7 @@ def convert_date(date_str):
     return None
 
 
-def get_cal_serialize_file(start_date_str, end_date_str, summary="Summary"):
+def get_cal_serialize_file(start_date_str:str, end_date_str:str, summary="Summary"):
     start_date = convert_date(start_date_str)
     end_date = convert_date(end_date_str)
     cal = vobject.iCalendar()
