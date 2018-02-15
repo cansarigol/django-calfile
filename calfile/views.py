@@ -1,26 +1,18 @@
-import datetime
-import vobject
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from .utils import convert_date
+from .utils import get_cal_serialize_file
 
+@csrf_exempt
 @require_http_methods(["POST"])
 def calfile(request):
-    start_date = convert_date(request.POST.get("start_date", ""))
-    end_date = convert_date(request.POST.get("end_date", ""))
+    start_date = request.POST.get("start_date", "")
+    end_date = request.POST.get("end_date", "") 
     summary = request.POST.get("summary", "Summary")
     filename = request.POST.get("filename", "calfile")
 
-    cal = vobject.iCalendar()
-    cal.add('method').value = 'PUBLISH'
-    vevent = cal.add('vevent')
-    vevent.add('dtstart').value = start_date
-    vevent.add('dtend').value = end_date
-    vevent.add('summary').value = summary
-    vevent.add('uid').value = '1'
-    vevent.add('dtstamp').value = datetime.datetime.now()
-
-    icalstream = cal.serialize()
+    icalstream = get_cal_serialize_file(start_date, end_date, summary)
+    
     response = HttpResponse(icalstream)
     response['Content-Disposition'] = f"attachment; filename={filename}.ics"
     return response
