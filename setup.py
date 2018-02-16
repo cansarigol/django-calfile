@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-calfile',
-    version='0.1',
+    version='1.0',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',
@@ -30,5 +30,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    ],
+    install_requires=[
+        'vobject',
     ],
 )
