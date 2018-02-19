@@ -18,7 +18,7 @@ Quick start
         'calfile',
     ]
 
-3. define::
+3. define settings::
     CALFILE_DATE_FORMAT = '%d-%m-%Y %H:%M'
 
 4. Include the URLconf in your project urls.py like this::
