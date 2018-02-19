@@ -32,6 +32,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
+        'django>=2.0.2'
         'vobject',
     ],
 )
